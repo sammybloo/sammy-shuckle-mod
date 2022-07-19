@@ -30,5 +30,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "sammyShuckleMod:HardShell": {
+    "NAME": "Hard Shell",
+    "FLAVOR": "This is your home.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b3 #yBlur."
+    ]
   }
 }

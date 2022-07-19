@@ -21,13 +21,11 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sammyShuckleMod.cards.*;
+import sammyShuckleMod.characters.Shuckle;
 import sammyShuckleMod.characters.TheDefault;
 import sammyShuckleMod.events.IdentityCrisisEvent;
 import sammyShuckleMod.potions.PlaceholderPotion;
-import sammyShuckleMod.relics.BottledPlaceholderRelic;
-import sammyShuckleMod.relics.DefaultClickableRelic;
-import sammyShuckleMod.relics.PlaceholderRelic;
-import sammyShuckleMod.relics.PlaceholderRelic2;
+import sammyShuckleMod.relics.*;
 import sammyShuckleMod.util.IDCheckDontTouchPls;
 import sammyShuckleMod.util.TextureLoader;
 import sammyShuckleMod.variables.DefaultCustomVariable;
@@ -95,7 +93,8 @@ public class DefaultMod implements
     // Colors (RGB)
     // Character Color
     public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
-    
+    public static final Color SHUCKLE_YELLOW = CardHelper.getColor(80.0f, 80.0f, 0f);
+
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
@@ -209,7 +208,14 @@ public class DefaultMod implements
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
-        
+
+        logger.info("Creating the color " + Shuckle.Enums.COLOR_YELLOW.toString());
+
+        BaseMod.addColor(Shuckle.Enums.COLOR_YELLOW, SHUCKLE_YELLOW, SHUCKLE_YELLOW, SHUCKLE_YELLOW,
+                SHUCKLE_YELLOW, SHUCKLE_YELLOW, SHUCKLE_YELLOW, SHUCKLE_YELLOW,
+                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
+                ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
+                ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
         logger.info("Done creating the color");
         
         
@@ -290,7 +296,10 @@ public class DefaultMod implements
         
         BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
                 THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
-        
+
+        BaseMod.addCharacter(new Shuckle("Shuckle", Shuckle.Enums.SHUCKLE),
+                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, Shuckle.Enums.SHUCKLE);
+
         receiveEditPotions();
         logger.info("Added " + TheDefault.Enums.THE_DEFAULT.toString());
     }
@@ -395,7 +404,7 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
-        
+        BaseMod.addRelicToCustomPool(new HardShellRelic(), Shuckle.Enums.COLOR_YELLOW);
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         

@@ -49,5 +49,37 @@
   "sammyShuckleMod:OrbSkill": {
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "sammyShuckleMod:Toxic": {
+    "NAME": "Toxic",
+    "DESCRIPTION": "Apply !M! Poison. Add a copy of this card to your Discard Pile."
+  },
+  "sammyShuckleMod:BugBite": {
+    "NAME": "Bug Bite",
+    "DESCRIPTION": "Deal !D! damage. If this deals unblocked damage, gain !M! Strength."
+  },
+  "sammyShuckleMod:ShellStrike": {
+    "NAME": "Shell Strike",
+    "DESCRIPTION": "Deal !D! damage. Gain Block equal to the unblocked damage."
+  },
+  "sammyShuckleMod:Infestation": {
+    "NAME": "Infestation",
+    "DESCRIPTION": "Apply !M! Weak and NL !sammyShuckleMod:SecondMagic! Vulnerable NL to an enemy."
+  },
+  "sammyShuckleMod:Smash": {
+    "NAME": "Smash",
+    "DESCRIPTION": "Gain !B! Block. Deal !D! damage to all enemies."
+  },
+  "sammyShuckleMod:Rollout": {
+    "NAME": "Rollout",
+    "DESCRIPTION": "Deal !D! damage. Gain !M! Strength this turn. NL Put a copy of this card into your hand. NL Exhaust."
+  },
+  "sammyShuckleMod:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "sammyShuckleMod:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
   }
 }
